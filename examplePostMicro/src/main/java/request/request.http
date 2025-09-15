@@ -1,0 +1,9 @@
+POST localhost:61037/api/posts
+Content-Type: application/json
+
+{
+  "titulo": "My First Post",
+  "contenido": "This is the content of my first post.",
+  "userId": "123e4567-e89b-12d3-a456-426614174000"
+}
+###

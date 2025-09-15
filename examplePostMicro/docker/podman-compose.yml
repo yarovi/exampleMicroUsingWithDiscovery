@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  cassandra:
+    image: cassandra:4.1
+    container_name: cassandra
+    ports:
+      - "9042:9042"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=PostCluster
+      - CASSANDRA_USER=cassandra
+      - CASSANDRA_PASSWORD=cassandra
+    volumes:
+      - cassandra_data:/var/lib/cassandra
+      - ./init-cassandra:/docker-entrypoint-initdb.d  # ⬅️ scripts de inicialización
+
+volumes:
+  cassandra_data:

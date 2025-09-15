@@ -1,0 +1,21 @@
+server:
+  port: 0  # puerto dinámico
+
+spring:
+  application:
+    name: post-service
+  cassandra:
+    keyspace-name: postsdb
+    contact-points: localhost
+    port: 9042
+    local-datacenter: datacenter1
+    username: cassandra
+    password: cassandra
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.value}
