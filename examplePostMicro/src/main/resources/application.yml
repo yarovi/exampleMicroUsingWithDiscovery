@@ -1,6 +1,7 @@
 server:
   port: 0  # puerto dinámico
-
+  profiles:
+    active: dev1
 spring:
   application:
     name: post-service
